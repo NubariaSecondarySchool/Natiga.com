@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتائج مدرسة النوبارية الثانوية العسكرية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+            text-align: right;
+            background-color: #2d3748;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Enhanced Graduation Header with Animation */
+        .graduation-header {
+            width: 100%;
+            height: 300px;
+            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot_%D9%A2%D9%A0%D9%A2%D9%A5%D9%A0%D9%A5%D9%A2%D9%A8_%D9%A0%D9%A2%D9%A2%D9%A1%D9%A1%D9%A4_Chrome-xrrI458PbkPEwieq3htXilCibnylVb.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            animation: headerSlideDown 1.2s ease-out;
+        }
+
+        @keyframes headerSlideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .graduation-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(to bottom, transparent, #2d3748);
+        }
+
+        /* School Logo/Badge Animation */
+        .graduation-header::before {
+            content: '🎓';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .main-content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: contentFadeIn 1.5s ease-out 0.3s both;
+        }
+
+        @keyframes contentFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Enhanced Title Section with Branding */
+        .title-section {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .school-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #e53e3e, #c53030);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            animation: badgePulse 2s ease-in-out infinite;
+            box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
+        }
+
+        @keyframes badgePulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 6px 20px rgba(229, 62, 62, 0.5); }
+        }
+
+        .main-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            from { text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 10px rgba(255,255,255,0.1); }
+            to { text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.2); }
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #cbd5e0;
+            font-weight: 400;
+            animation: subtitleSlide 1s ease-out 0.5s both;
+        }
+
+        @keyframes subtitleSlide {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Enhanced Error Message with Animation */
+        .error-message {
+            background: linear-gradient(135deg, #e53e3e, #c53030);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.6;
+            box-shadow: 0 8px 25px rgba(229, 62, 62, 0.3);
+            animation: errorSlideIn 0.8s ease-out;
+            border: 2px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-message::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes errorSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .error-message p {
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .error-message p:last-child {
+            margin-bottom: 0;
+        }
+
+        .error-message i {
+            font-size: 1.5rem;
+            margin-left: 0.5rem;
+            animation: iconBounce 1s ease-in-out infinite;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Enhanced Form Container */
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            animation: formSlideUp 1s ease-out 0.7s both;
+        }
+
+        @keyframes formSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .student-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1rem;
+            align-items: center;
+            animation: rowFadeIn 0.6s ease-out both;
+        }
+
+        .form-row:nth-child(1) { animation-delay: 0.1s; }
+        .form-row:nth-child(2) { animation-delay: 0.2s; }
+        .form-row:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes rowFadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .section-row {
+            display: none;
+            animation: sectionSlideDown 0.5s ease-out;
+        }
+
+        .section-row.show {
+            display: grid;
+        }
+
+        @keyframes sectionSlideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+                max-height: 0;
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                max-height: 100px;
+            }
+        }
+
+        .form-label {
+            color: white;
+            font-size: 1.125rem;
+            font-weight: 500;
+            text-align: right;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+
+        .input-container {
+            width: 100%;
+            position: relative;
+        }
+
+        /* Enhanced Input Styling with Animations */
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #4a5568, #2d3748);
+            border: 2px solid #718096;
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: #e53e3e;
+            box-shadow: 0 0 0 4px rgba(229, 62, 62, 0.2), inset 0 2px 4px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #5a6578, #3d4758);
+        }
+
+        .form-input:hover,
+        .form-select:hover {
+            border-color: #a0aec0;
+            transform: translateY(-1px);
+        }
+
+        .form-input::placeholder {
+            color: #a0aec0;
+            text-align: right;
+            transition: opacity 0.3s ease;
+        }
+
+        .form-input:focus::placeholder {
+            opacity: 0.7;
+        }
+
+        .form-select option {
+            background-color: #4a5568;
+            color: white;
+            padding: 0.5rem;
+        }
+
+        /* Enhanced Button with Advanced Animations */
+        .button-container {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 1rem;
+        }
+
+        .search-button {
+            background: linear-gradient(135deg, #e53e3e, #c53030);
+            color: white;
+            padding: 0.75rem 2.5rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Cairo', sans-serif;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
+            animation: buttonPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes buttonPulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3); }
+            50% { box-shadow: 0 6px 20px rgba(229, 62, 62, 0.5); }
+        }
+
+        .search-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .search-button:hover::before {
+            left: 100%;
+        }
+
+        .search-button:hover:not(:disabled) {
+            background: linear-gradient(135deg, #c53030, #a02727);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(229, 62, 62, 0.5);
+        }
+
+        .search-button:active {
+            transform: translateY(-1px) scale(1.02);
+            animation: buttonClick 0.2s ease;
+        }
+
+        @keyframes buttonClick {
+            0% { transform: translateY(-3px) scale(1.05); }
+            50% { transform: translateY(-1px) scale(1.02); }
+            100% { transform: translateY(-3px) scale(1.05); }
+        }
+
+        .search-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            animation: loadingPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes loadingPulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Enhanced Loader */
+        .loader {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+            animation: loaderFadeIn 0.5s ease-out;
+        }
+
+        .loader.show {
+            display: flex;
+        }
+
+        @keyframes loaderFadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .spinner {
+            border: 4px solid #4a5568;
+            border-top: 4px solid #e53e3e;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite, spinnerGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes spinnerGlow {
+            from { box-shadow: 0 0 5px rgba(229, 62, 62, 0.3); }
+            to { box-shadow: 0 0 20px rgba(229, 62, 62, 0.6); }
+        }
+
+        /* Enhanced Results Container */
+        .results-container {
+            background: linear-gradient(135deg, white, #f8f9fa);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            animation: resultsSlideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            display: none;
+            border: 1px solid rgba(229, 62, 62, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .results-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #e53e3e, #c53030, #e53e3e);
+            animation: topBorderMove 3s ease-in-out infinite;
+        }
+
+        @keyframes topBorderMove {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        .results-container.show {
+            display: block;
+        }
+
+        @keyframes resultsSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .result-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #2b6cb0;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            animation: titleTypewriter 1s ease-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes titleTypewriter {
+            from { width: 0; opacity: 0; }
+            to { width: 100%; opacity: 1; }
+        }
+
+        /* Enhanced No Results Message */
+        .no-results {
+            background: linear-gradient(135deg, #fed7d7, #feb2b2);
+            border: 2px solid #fc8181;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+            animation: noResultsShake 0.8s ease-out;
+            box-shadow: 0 10px 25px rgba(229, 62, 62, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .no-results::before {
+            content: '⚠️';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 2rem;
+            animation: warningFloat 2s ease-in-out infinite;
+        }
+
+        @keyframes warningFloat {
+            0%, 100% { transform: rotate(-10deg) translateY(0); }
+            50% { transform: rotate(10deg) translateY(-5px); }
+        }
+
+        @keyframes noResultsShake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+
+        .no-results h3 {
+            color: #e53e3e;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .no-results p {
+            color: #c53030;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .no-results .contact-info {
+            background: rgba(255,255,255,0.7);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            border: 1px solid rgba(229, 62, 62, 0.3);
+        }
+
+        /* Enhanced Table Animations */
+        .result-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .result-info p {
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            padding: 1rem;
+            border-radius: 12px;
+            color: #2d3748;
+            animation: infoCardSlide 0.6s ease-out both;
+            border: 1px solid rgba(229, 62, 62, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .result-info p:nth-child(1) { animation-delay: 0.1s; }
+        .result-info p:nth-child(2) { animation-delay: 0.2s; }
+        .result-info p:nth-child(3) { animation-delay: 0.3s; }
+
+        .result-info p:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        @keyframes infoCardSlide {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 15px;
+            overflow: hidden;
+            animation: tableSlideIn 0.8s ease-out;
+        }
+
+        @keyframes tableSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .results-table th {
+            background: linear-gradient(135deg, #3182ce, #2b6cb0);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+            animation: headerSlideDown 0.6s ease-out both;
+        }
+
+        .results-table th:nth-child(1) { animation-delay: 0.1s; }
+        .results-table th:nth-child(2) { animation-delay: 0.2s; }
+        .results-table th:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes headerSlideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .results-table td {
+            padding: 0.75rem;
+            text-align: center;
+            color: #2d3748;
+            animation: cellFadeIn 0.5s ease-out both;
+            transition: background-color 0.3s ease;
+        }
+
+        .results-table tbody tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+
+        .results-table tbody tr:nth-child(odd) {
+            background-color: white;
+        }
+
+        .results-table tbody tr:hover {
+            background-color: #e6fffa !important;
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+
+        @keyframes cellFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .total-row {
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e0) !important;
+            font-weight: 700;
+            animation: totalRowHighlight 1s ease-out 0.5s both;
+        }
+
+        @keyframes totalRowHighlight {
+            0% { background: linear-gradient(135deg, #e2e8f0, #cbd5e0); }
+            50% { background: linear-gradient(135deg, #fed7d7, #fbb6ce); }
+            100% { background: linear-gradient(135deg, #e2e8f0, #cbd5e0); }
+        }
+
+        .total-row td {
+            padding: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .pass-score {
+            color: #38a169;
+            font-weight: 700;
+            animation: scoreSuccess 0.6s ease-out;
+        }
+
+        .fail-score {
+            color: #e53e3e;
+            font-weight: 700;
+            animation: scoreFail 0.6s ease-out;
+        }
+
+        @keyframes scoreSuccess {
+            0% { color: #2d3748; transform: scale(1); }
+            50% { color: #38a169; transform: scale(1.1); }
+            100% { color: #38a169; transform: scale(1); }
+        }
+
+        @keyframes scoreFail {
+            0% { color: #2d3748; transform: scale(1); }
+            50% { color: #e53e3e; transform: scale(1.1); }
+            100% { color: #e53e3e; transform: scale(1); }
+        }
+
+        /* Enhanced Final Result */
+        .final-result {
+            text-align: center;
+            animation: finalResultReveal 1s ease-out 0.8s both;
+        }
+
+        @keyframes finalResultReveal {
+            from {
+                opacity: 0;
+                transform: scale(0.5) rotate(-10deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .result-status {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border: 3px solid;
+            position: relative;
+            overflow: hidden;
+            animation: statusPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .result-status.pass {
+            background: linear-gradient(135deg, #f0fff4, #c6f6d5);
+            color: #38a169;
+            border-color: #68d391;
+            animation: passGlow 2s ease-in-out infinite alternate;
+        }
+
+        .result-status.fail {
+            background: linear-gradient(135deg, #fed7d7, #fbb6ce);
+            color: #e53e3e;
+            border-color: #fc8181;
+            animation: failGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes passGlow {
+            from { box-shadow: 0 0 10px rgba(56, 161, 105, 0.3); }
+            to { box-shadow: 0 0 20px rgba(56, 161, 105, 0.6); }
+        }
+
+        @keyframes failGlow {
+            from { box-shadow: 0 0 10px rgba(229, 62, 62, 0.3); }
+            to { box-shadow: 0 0 20px rgba(229, 62, 62, 0.6); }
+        }
+
+        /* Enhanced Footer */
+        .footer-note {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: footerSlideUp 1s ease-out 1s both;
+        }
+
+        @keyframes footerSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer-note p {
+            color: white;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Responsive Design with Enhanced Animations */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2rem;
+                animation: mobileTitleBounce 1s ease-out;
+            }
+
+            @keyframes mobileTitleBounce {
+                0% { transform: scale(0.8) translateY(-20px); opacity: 0; }
+                60% { transform: scale(1.1) translateY(0); opacity: 1; }
+                100% { transform: scale(1) translateY(0); opacity: 1; }
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+                animation: mobileRowSlide 0.6s ease-out both;
+            }
+
+            @keyframes mobileRowSlide {
+                from {
+                    opacity: 0;
+                    transform: translateX(-30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+            .form-label {
+                text-align: center;
+                order: -1;
+            }
+
+            .graduation-header {
+                height: 200px;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .result-info {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Custom scrollbar with animations */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #4a5568;
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #718096, #a0aec0);
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #a0aec0, #cbd5e0);
+        }
+
+        /* Additional Interactive Elements */
+        .form-input:valid {
+            border-color: #38a169;
+            animation: inputSuccess 0.5s ease-out;
+        }
+
+        @keyframes inputSuccess {
+            0% { border-color: #718096; }
+            50% { border-color: #38a169; box-shadow: 0 0 10px rgba(56, 161, 105, 0.3); }
+            100% { border-color: #38a169; }
+        }
+
+        .form-input:invalid:not(:placeholder-shown) {
+            border-color: #e53e3e;
+            animation: inputError 0.5s ease-out;
+        }
+
+        @keyframes inputError {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Loading text animation */
+        .loading-text {
+            animation: loadingDots 1.5s infinite;
+        }
+
+        @keyframes loadingDots {
+            0%, 20% { content: 'جاري البحث'; }
+            40% { content: 'جاري البحث.'; }
+            60% { content: 'جاري البحث..'; }
+            80%, 100% { content: 'جاري البحث...'; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Graduation Image Header -->
+    <div class="graduation-header"></div>
+
+    <div class="main-content">
+        <!-- Enhanced Title Section with Branding -->
+        <div class="title-section">
+            <div class="school-badge">
+                <i class="fas fa-shield-alt"></i>
+                مدرسة النوبارية الثانوية العسكرية
+            </div>
+            <h1 class="main-title">بيانات الطالب</h1>
+            <p class="subtitle">قم بإدخال رقم الجلوس وصفك الدراسي</p>
+        </div>
+
+        <!-- Enhanced Error Message -->
+        <div class="error-message">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p>تأسف لم نستطع الحصول على بيانات الطالب ..</p>
+            <p>من فضلك تأكد من الرقم بشكل صحيح أو راجع المدرسة</p>
+        </div>
+
+        <!-- Enhanced Form Container -->
+        <div class="form-container">
+            <form id="searchForm" class="student-form">
+                <!-- Student ID Input -->
+                <div class="form-row">
+                    <div class="input-container">
+                        <input type="text" id="studentId" value="55555" class="form-input" required>
+                    </div>
+                    <label class="form-label">
+                        <i class="fas fa-id-card"></i>
+                        رقم الجلوس
+                    </label>
+                </div>
+
+                <!-- Grade Selection -->
+                <div class="form-row">
+                    <div class="input-container">
+                        <select id="grade" class="form-select" required>
+                            <option value="">اختر الصف</option>
+                            <option value="first">الأول الثانوي</option>
+                            <option value="second" selected>الثاني الثانوي</option>
+                        </select>
+                    </div>
+                    <label class="form-label">
+                        <i class="fas fa-graduation-cap"></i>
+                        الصف الدراسي:
+                    </label>
+                </div>
+
+                <!-- Section Selection (for second grade) -->
+                <div id="sectionRow" class="form-row section-row show">
+                    <div class="input-container">
+                        <select id="section" class="form-select">
+                            <option value="scientific">علمي</option>
+                            <option value="literary" selected>أدبي</option>
+                        </select>
+                    </div>
+                    <label class="form-label">
+                        <i class="fas fa-book"></i>
+                        الشعبة:
+                    </label>
+                </div>
+
+                <!-- Enhanced Search Button -->
+                <div class="button-container">
+                    <button type="submit" id="searchButton" class="search-button">
+                        <i class="fas fa-search"></i>
+                        بحث
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Enhanced Loader -->
+        <div id="loader" class="loader">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- Enhanced No Results Message -->
+        <div id="noResults" class="no-results" style="display: none;">
+            <h3>
+                <i class="fas fa-search-minus"></i>
+                لم يتم العثور على بيانات الطالب
+            </h3>
+            <p>عذراً، لم نتمكن من العثور على بيانات الطالب برقم الجلوس المدخل.</p>
+            <p>يرجى التأكد من صحة رقم الجلوس المدخل أو مراجعة إدارة المدرسة.</p>
+            <div class="contact-info">
+                <p><strong>للاستفسار:</strong></p>
+                <p><i class="fas fa-phone"></i> يرجى زيارة مدرسة النوبارية الثانوية العسكرية</p>
+                <p><i class="fas fa-clock"></i> أوقات العمل: من 8:00 ص إلى 2:00 م</p>
+            </div>
+        </div>
+
+        <!-- Enhanced Results Display -->
+        <div id="resultsContainer" class="results-container">
+            <!-- Results will be populated here -->
+        </div>
+
+        <!-- Enhanced Footer -->
+        <div class="footer-note">
+            <p>
+                <i class="fas fa-info-circle"></i>
+                الان درجه الصف الاول والثاني الثانوي ادخل رقم القومي واختر الصف والشعبه لي عرض النتيجه علما بي ان المدرسه ليست مسؤله علي اي خطاء في الدرجات يرجي التوجه الي المدرسه لي جلب الشهاده من المدرسه
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Mock student database
+        const studentsDatabase = {
+            first: {
+                "12345": {
+                    name: "أحمد محمد علي",
+                    scores: {
+                        "اللغة العربية": 65,
+                        "اللغة الأجنبية الأولى": 45,
+                        "الرياضيات": 50,
+                        "العلوم المتكامله": 48,
+                        "التاريخ": 42,
+                        "الجغرافيا": 38
+                    }
+                }
+            },
+            second: {
+                scientific: {
+                    "67890": {
+                        name: "فاطمة أحمد محمود",
+                        scores: {
+                            "اللغة العربية": 70,
+                            "اللغة الإنجليزية": 52,
+                            "الرياضيات": 55,
+                            "الفيزياء": 48,
+                            "الكيمياء": 45,
+                            "الأحياء": 50
+                        }
+                    }
+                },
+                literary: {
+                    "55555": {
+                        name: "محمد أحمد السيد",
+                        scores: {
+                            "اللغة العربية": 72,
+                            "اللغة الإنجليزية": 48,
+                            "التاريخ": 55,
+                            "الجغرافيا": 50,
+                            "علم النفس": 45,
+                            "الفلسفة": 42,
+                            "رياضه ادبي": 16
+                        }
+                    }
+                }
+            }
+        };
+
+        const maxGrades = {
+            "اللغة العربية": 80,
+            "اللغة الأجنبية الأولى": 60,
+            "الرياضيات": 60,
+            "الفيزياء": 60,
+            "الكيمياء": 60,
+            "الأحياء": 60,
+            "علم النفس": 60,
+            "التاريخ": 60,
+            "الجغرافيا": 60,
+            "اللغة الإنجليزية": 60,
+            "العلوم المتكامله": 60,
+            "الفلسفة": 60,
+            "اللغة الفرنسية": 20,
+            "رياضه ادبي": 20
+        };
+
+        // DOM elements
+        const gradeSelect = document.getElementById('grade');
+        const sectionRow = document.getElementById('sectionRow');
+        const searchForm = document.getElementById('searchForm');
+        const loader = document.getElementById('loader');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const noResults = document.getElementById('noResults');
+        const searchButton = document.getElementById('searchButton');
+
+        // Enhanced show/hide section with animation
+        gradeSelect.addEventListener('change', function() {
+            if (this.value === 'second') {
+                sectionRow.classList.add('show');
+            } else {
+                sectionRow.classList.remove('show');
+            }
+        });
+
+        // Enhanced form submission with animations
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const studentId = document.getElementById('studentId').value;
+            const grade = document.getElementById('grade').value;
+            const section = document.getElementById('section').value;
+
+            // Enhanced loading state
+            loader.classList.add('show');
+            resultsContainer.classList.remove('show');
+            noResults.style.display = 'none';
+            searchButton.disabled = true;
+            searchButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span class="loading-text">جاري البحث...</span>';
+
+            // Simulate API call with enhanced feedback
+            setTimeout(() => {
+                try {
+                    const studentData = findStudent(studentId, grade, section);
+                    if (studentData) {
+                        displayResult(studentData, studentId, grade, section);
+                    } else {
+                        showNoResults();
+                    }
+                } catch (err) {
+                    showNoResults();
+                } finally {
+                    loader.classList.remove('show');
+                    searchButton.disabled = false;
+                    searchButton.innerHTML = '<i class="fas fa-search"></i> بحث';
+                }
+            }, 1500);
+        });
+
+        function findStudent(id, grade, section) {
+            if (grade === 'first') {
+                return studentsDatabase.first[id];
+            } else if (grade === 'second' && section) {
+                return studentsDatabase.second[section][id];
+            }
+            return null;
+        }
+
+        function showNoResults() {
+            noResults.style.display = 'block';
+            resultsContainer.classList.remove('show');
+        }
+
+        function displayResult(student, studentId, grade, section) {
+            const subjects = Object.keys(student.scores);
+            const totalScore = subjects.reduce((sum, subject) => sum + student.scores[subject], 0);
+            const maxTotal = subjects.reduce((sum, subject) => sum + (maxGrades[subject] || 20), 0);
+            const percentage = ((totalScore / maxTotal) * 100).toFixed(2);
+
+            let resultHTML = `
+                <h2 class="result-title">
+                    <i class="fas fa-user-graduate"></i>
+                    ${student.name}
+                </h2>
+                <div class="result-info">
+                    <p><strong><i class="fas fa-id-badge"></i> رقم الجلوس:</strong> ${studentId}</p>
+                    <p><strong><i class="fas fa-school"></i> الصف:</strong> ${grade === 'first' ? 'الأول الثانوي' : 'الثاني الثانوي'}</p>
+                    ${grade === 'second' ? `<p><strong><i class="fas fa-book-open"></i> الشعبة:</strong> ${section === 'scientific' ? 'علمي' : 'أدبي'}</p>` : ''}
+                </div>
+                <div class="table-container">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th><i class="fas fa-book"></i> المادة</th>
+                                <th><i class="fas fa-chart-bar"></i> الدرجة</th>
+                                <th><i class="fas fa-percentage"></i> النسبة المئوية</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            `;
+
+            subjects.forEach((subject, index) => {
+                const score = student.scores[subject];
+                const maxGrade = maxGrades[subject] || 20;
+                const subjectPercentage = ((score / maxGrade) * 100).toFixed(2);
+                const scoreClass = score >= maxGrade * 0.5 ? 'pass-score' : 'fail-score';
+                const percentageClass = parseFloat(subjectPercentage) >= 50 ? 'pass-score' : 'fail-score';
+                
+                resultHTML += `
+                    <tr style="animation-delay: ${index * 0.1}s">
+                        <td>${subject}</td>
+                        <td><span class="${scoreClass}">${score}</span>/${maxGrade}</td>
+                        <td><span class="${percentageClass}">${subjectPercentage}%</span></td>
+                    </tr>
+                `;
+            });
+
+            const finalPercentageClass = parseFloat(percentage) >= 50 ? 'pass-score' : 'fail-score';
+            const statusClass = parseFloat(percentage) >= 50 ? 'pass' : 'fail';
+            const statusText = parseFloat(percentage) >= 50 ? 'ناجح' : 'راسب';
+            const statusIcon = parseFloat(percentage) >= 50 ? 'fa-check-circle' : 'fa-times-circle';
+
+            resultHTML += `
+                        </tbody>
+                        <tfoot>
+                            <tr class="total-row">
+                                <td><i class="fas fa-calculator"></i> المجموع الكلي</td>
+                                <td>${totalScore}/${maxTotal}</td>
+                                <td><span class="${finalPercentageClass}">${percentage}%</span></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="final-result">
+                    <div class="result-status ${statusClass}">
+                        <i class="fas ${statusIcon}"></i>
+                        ${statusText}
+                    </div>
+                </div>
+            `;
+
+            resultsContainer.innerHTML = resultHTML;
+            resultsContainer.classList.add('show');
+            noResults.style.display = 'none';
+        }
+
+        // Initialize the form with default values and animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default values to match the image
+            document.getElementById('studentId').value = '55555';
+            document.getElementById('grade').value = 'second';
+            document.getElementById('section').value = 'literary';
+            sectionRow.classList.add('show');
+
+            // Add staggered animation to form rows
+            const formRows = document.querySelectorAll('.form-row');
+            formRows.forEach((row, index) => {
+                row.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        // Enhanced input interactions
+        const inputs = document.querySelectorAll('.form-input, .form-select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
