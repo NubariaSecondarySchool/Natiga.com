@@ -964,17 +964,22 @@
             <form id="searchForm" class="student-form">
                 <!-- Student ID Input -->
                 <div class="form-row">
-                    <div class="input-container">
-                        <input type="text" id="studentId" value="55555" class="form-input" required>
-                    </div>
                     <label class="form-label">
                         <i class="fas fa-id-card"></i>
                         رقم الجلوس
                     </label>
+                    <div class="input-container">
+                        <input type="text" id="studentId" value="00000" class="form-input" required>
+                    </div>
+                    
                 </div>
 
                 <!-- Grade Selection -->
                 <div class="form-row">
+                    <label class="form-label">
+                        <i class="fas fa-graduation-cap"></i>
+                        الصف الدراسي:
+                    </label>
                     <div class="input-container">
                         <select id="grade" class="form-select" required>
                             <option value="">اختر الصف</option>
@@ -982,24 +987,22 @@
                             <option value="second" selected>الثاني الثانوي</option>
                         </select>
                     </div>
-                    <label class="form-label">
-                        <i class="fas fa-graduation-cap"></i>
-                        الصف الدراسي:
-                    </label>
+                    
                 </div>
 
                 <!-- Section Selection (for second grade) -->
                 <div id="sectionRow" class="form-row section-row show">
+                    <label class="form-label">
+                        <i class="fas fa-book"></i>
+                        الشعبة:
+                    </label>
                     <div class="input-container">
                         <select id="section" class="form-select">
                             <option value="scientific">علمي</option>
                             <option value="literary" selected>أدبي</option>
                         </select>
                     </div>
-                    <label class="form-label">
-                        <i class="fas fa-book"></i>
-                        الشعبة:
-                    </label>
+                    
                 </div>
 
                 <!-- Enhanced Search Button -->
