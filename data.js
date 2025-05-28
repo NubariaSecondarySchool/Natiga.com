@@ -1,4 +1,4 @@
-const studentsDatabase = {
+(const studentsDatabase = {
             "first": {
                 "214": {
                     "name": "مازن خالد حماده عبدالرحمن السمخراطي",
@@ -70,7 +70,7 @@ const studentsDatabase = {
       "الأحياء": 51,
       "الفيزياء": 48,
       "الكيمياء": 52
-    }
+    },
     
                 }
                             
