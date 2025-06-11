@@ -90,7 +90,6 @@ const studentsDatabase = {
       "الكيمياء": 52
     }
   }
-
 ,
 
 
